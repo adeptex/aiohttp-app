@@ -1,0 +1,6 @@
+aiohttp
+aiohttp_jinja2
+jinja2
+asyncio
+argparse
+pyyaml
