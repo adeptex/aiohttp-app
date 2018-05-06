@@ -1,0 +1,5 @@
+.dockerignore
+.gitignore
+.vscode
+__pycache__
+build.sh

@@ -1,5 +1,6 @@
 from aiohttp import web
 from routes import setup_routes, setup_static_routes
+from database import sql
 from security import on_response_prepare
 import threading
 import aiohttp_jinja2
@@ -21,6 +22,9 @@ def load_config(config):
 # config
 args = parse_args()
 config = load_config(args.config)
+
+# database
+print('SQLite {}'.format(sql('select sqlite_version()')[0][0]))
 
 # bot
 # threading.Thread(target=bot).start()
