@@ -16,4 +16,4 @@ RUN chown -R app:app ${SERVICE_HOME}
 
 USER app
 
-CMD ["sh", "-c", "${SERVICE_HOME}/run.sh"]
+CMD ["make", "run"]
