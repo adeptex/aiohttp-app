@@ -1,5 +1,6 @@
 from aiohttp import web
 from routes import setup_routes, setup_static_routes
+from middlewares import setup_middlewares
 from database import sql
 from security import on_response_prepare
 import threading
@@ -47,6 +48,7 @@ def main():
     app.on_response_prepare.append(on_response_prepare)
     setup_static_routes(app)
     setup_routes(app)
+    setup_middlewares(app)
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('app/templates'))
     web.run_app(app, host=config['host'], port=config['port'], ssl_context=tls(config))
 
